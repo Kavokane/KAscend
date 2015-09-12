@@ -24,3 +24,5 @@ Choose any sign that has degrasi
 
 When you first run the script it will tell you what day you're on and ask you if that's correct.
 Second it will ask you if you want to end the day with an overdrink. This was added in case you wanted to do other things before the end of the day.
+
+The script will not run the most efficient 3 day run possible but it will always run any class in 3 days.
