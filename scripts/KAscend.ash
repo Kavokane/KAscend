@@ -77,7 +77,7 @@ void main(int day, int overdrink)
 		//DO COIL SERVICE
 		visit_url("council.php"); //initial message that the council is in jail
 		visit_url("council.php"); //needed?
-		visit_url("choice.php?whichchoice=1089&option=11&pwd");
+		visit_url("choice.php?whichchoice=1089&option=11&pwd="+my_hash());
 		doCLI("use a ten-percent bonus");
 						
 		doCLI("chew astral energy drink"); //doing later for more adventures
@@ -87,13 +87,13 @@ void main(int day, int overdrink)
 		
 		doCLI("maximize weapon damage");
 		//DO WEAPON DAMAGE SERVICE
-		visit_url("choice.php?whichchoice=1089&option=6&pwd");
+		visit_url("choice.php?whichchoice=1089&option=6&pwd="+my_hash());
 		doCLI("eat weird gazelle steak");
 		
 		doCLI("maximize item drop");
 		doCLI("cheat The Wheel of Fortune");
 		//DO ITEM DROP SERVICE
-		visit_url("choice.php?whichchoice=1089&option=9&pwd");
+		visit_url("choice.php?whichchoice=1089&option=9&pwd="+my_hash());
 		
 		odeToBoozeMe();
 		odeToBoozeMe();
@@ -140,11 +140,11 @@ void main(int day, int overdrink)
 		doCLI("eat sausage without a cause");
 		doCLI("maximize hot res");
 		//DO HOT RES SERVICE
-		visit_url("choice.php?whichchoice=1089&option=10&pwd");
+		visit_url("choice.php?whichchoice=1089&option=10&pwd="+my_hash());
     
 		doCLI("maximize hp");
 		//DO HP SERVICE
-		visit_url("choice.php?whichchoice=1089&option=1&pwd");
+		visit_url("choice.php?whichchoice=1089&option=1&pwd="+my_hash());
     
 		doCLI("chew blood-drive sticker");
 		odeToBoozeMe();
@@ -173,7 +173,7 @@ void main(int day, int overdrink)
 		doCLI("drink hotsocks");
 		doCLI("maximize familiar weight");
 		//DO FAMLIAR WEIGHT SERVICE
-		visit_url("choice.php?whichchoice=1089&option=5&pwd");
+		visit_url("choice.php?whichchoice=1089&option=5&pwd="+my_hash());
     
 		//normal prep here
 		if (my_mp() < 6) doCLI("rest free"); else print("You have enough mana, skipping rest");
@@ -202,7 +202,7 @@ void main(int day, int overdrink)
 		doCLI("maximize myst");
 		doCLI("use bag of grain");
 		//DO MYST SERVICE
-		visit_url("choice.php?whichchoice=1089&option=3&pwd");
+		visit_url("choice.php?whichchoice=1089&option=3&pwd="+my_hash());
 
 		odeToBoozeMe();
 		doCLI("drink Bee's Knees");
@@ -210,13 +210,13 @@ void main(int day, int overdrink)
 		doCLI("maximize mox");
 		doCLI("use pocket maze");
 		//DO MOX SERVICE
-		visit_url("choice.php?whichchoice=1089&option=4&pwd");
+		visit_url("choice.php?whichchoice=1089&option=4&pwd="+my_hash());
     
 		doCLI("maximize -combat");
 		doCLI("use shady shades");
 		doCLI("use squeaky toy rose");
 		//DO -COMBAT SERVICE
-		visit_url("choice.php?whichchoice=1089&option=8&pwd");
+		visit_url("choice.php?whichchoice=1089&option=8&pwd="+my_hash());
     
 		print("YAY DONE!");
 		break;
