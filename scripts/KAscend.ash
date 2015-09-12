@@ -76,6 +76,7 @@ void main(int day, int overdrink)
 		
 		//DO COIL SERVICE
 		visit_url("council.php"); //initial message that the council is in jail
+		visit_url("council.php"); //needed?
 		visit_url("choice.php?whichchoice=1089&option=11&pwd");
 		doCLI("use a ten-percent bonus");
 						
