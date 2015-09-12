@@ -7,21 +7,21 @@ The upside is that there are no variables to the success of this script and you 
 The script will not run the most efficient 3 day run possible but it will always run any class in 3 days.
 
 REQUIRED IOTMs:
-Deck of cards
-Winter garden
-Smiths tome
-Vip key
+Deck of cards,
+Winter garden,
+Smiths tome,
+Vip key,
 Chateau
 
 REQUIRED HARDCORE PERMED SKILLS:
 Ode to booze
 
 HOW TO START:
-Get astral bracers
+Get astral bracers,
 Get astral energy drinks
 
-Choose Hardcore
-Choose any class you like!
+Choose Hardcore,
+Choose any class you like!,
 Choose any sign that has degrasi
 
 When you first run the script it will tell you what day you're on and ask you if that's correct.
