@@ -12,5 +12,3 @@ Chateau
 
 REQUIRED SKILLS:
 Ode to booze
-
-
