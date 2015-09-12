@@ -116,7 +116,7 @@ void main(int day, int overdrink)
 		doCLI("drink sockdollager");
 		doCLI("maximize spell damage");
 		//DO SPELL DAMAGE SERVICE
-		visit_url("choice.php?whichchoice=1089&option=7&pwd");
+		visit_url("choice.php?whichchoice=1089&option=7&pwd="+my_hash());
     
 		if (my_mp() < 6) doCLI("rest free"); else print("You have enough mana, skipping rest");
 		use_skill(3, $skill[summon smithsness]);
