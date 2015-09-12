@@ -1,4 +1,6 @@
 // KAscend.ash - Kavok
+// Credits to come
+
 script "KAscend.ash";
 notify Kavok;
 
