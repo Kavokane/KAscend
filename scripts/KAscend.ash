@@ -33,7 +33,7 @@ void main(int day, int overdrink)
 		//do stuff
 		doCLI("use newbiesport tent");
 		doCLI("equip astral bracer");
-		visit_url("tutorial.php?action=toot");
+		page = visit_url("tutorial.php?action=toot");
 		if (item_amount($item[letter from King Ralph XI]) > 0) use(1, $item[letter from King Ralph XI]);
 		if (item_amount($item[pork elf goodies sack]) > 0) use(1, $item[pork elf goodies sack]);
 		foreach stone in $items[hamethyst, baconstone, porquoise] autosell(item_amount(stone), stone);
