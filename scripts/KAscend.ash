@@ -1,7 +1,7 @@
 // KAscend.ash - Kavok
 // Credits to come
 
-script "KAscend.ash";
+script "KAscend.ash - v0.24";
 notify Kavok;
 
 print("Your game says it's day "+my_daycount()+". Select day to run:");
