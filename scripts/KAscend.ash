@@ -1,7 +1,7 @@
 // KAscend.ash - Kavok
 // Credits to come
 
-script "KAscend.ash - v0.27";
+script "KAscend.ash - v0.28";
 notify Kavok;
 
 print("Your game says it's day "+my_daycount()+". Select day to run:");
@@ -17,7 +17,7 @@ boolean doCLI(string cmd)
 boolean odeToBoozeMe()
 {
 	if (my_mp() < 50) doCLI("rest free"); else print("You have enough mana, skipping rest");
-	if (my_mp() >= 50) use_skill(1, $skill[The Ode to Booze]); else print("Something broke trying to cast ode");
+	if (my_mp() >= 50) use_skill(1, $skill[The Ode to Booze]); else doCLI("cast ode to booze");
 	return true;
 }
 
@@ -69,8 +69,7 @@ void main(int day, int overdrink)
 		doCLI("drink ice island long tea");
 		doCLI("drink sockdollager");
 		doCLI("drink sockdollager");
-		doCLI("acquire Strikes Again Bigmouth");
-		doCLI("acquire Strikes Again Bigmouth");
+		doCLI("acquire 2 Strikes Again Bigmouth");
 		doCLI("drink Strikes Again Bigmouth");
 		doCLI("drink Strikes Again Bigmouth");
 		
@@ -84,7 +83,7 @@ void main(int day, int overdrink)
 		page = visit_url("council.php"); //initial message that the council is in jail
 		page = visit_url("choice.php?whichchoice=1089&option=11&pwd");
 		doCLI("use a ten-percent bonus");
-						
+		
 		doCLI("chew astral energy drink"); //doing later for more adventures
 		
 		odeToBoozeMe();
@@ -130,8 +129,7 @@ void main(int day, int overdrink)
     
 		doCLI("garden pick");
 		doCLI("acquire ice island long tea");
-		doCLI("acquire Strikes Again Bigmouth");
-		doCLI("acquire Strikes Again Bigmouth");
+		doCLI("acquire 2 Strikes Again Bigmouth");
 		doCLI("acquire this charming flan");
 		doCLI("eat this charming flan");
 		odeToBoozeMe();
@@ -188,12 +186,10 @@ void main(int day, int overdrink)
 		doCLI("garden pick");
 		doCLI("acquire ice island long tea");
 		doCLI("acquire Strikes Again Bigmouth");
-		doCLI("acquire this charming flan");
-		doCLI("acquire this charming flan");
+		doCLI("acquire 2 this charming flan");
 		doCLI("eat this charming flan");
 		doCLI("eat this charming flan");
-		doCLI("acquire snow crab");
-		doCLI("acquire snow crab");
+		doCLI("acquire 2 snow crab");
 		doCLI("eat snow crab");
 		doCLI("eat snow crab");
 		odeToBoozeMe();
