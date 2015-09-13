@@ -14,8 +14,9 @@ boolean doCLI(string cmd)
 	return false;
 }
 
-boolean odeToBoozeMe()
+boolean odeToBoozeMe(int overdrink)
 {
+	if ((my_inebriety() == 14 && overdrink == 0) || (my_inebriety() > 14)) return true;
 	if (my_mp() < 50) doCLI("rest free"); else print("You have enough mana, skipping rest");
 	if (my_mp() >= 50) use_skill(1, $skill[The Ode to Booze]); else doCLI("cast ode to booze");
 	return true;
@@ -37,8 +38,6 @@ void main(int day, int overdrink)
 		
 		case 1: print("Starting Day 1"); //====================================================================================================
 		//do stuff
-		doCLI("use newbiesport tent");
-		doCLI("equip astral bracer");
 		page = visit_url("tutorial.php?action=toot");
 		if (item_amount($item[letter from King Ralph XI]) > 0) use(1, $item[letter from King Ralph XI]);
 		if (item_amount($item[pork elf goodies sack]) > 0) use(1, $item[pork elf goodies sack]);
@@ -62,9 +61,9 @@ void main(int day, int overdrink)
 		doCLI("garden pick");
 		doCLI("acquire ice island long tea");
 
-		odeToBoozeMe();
-		odeToBoozeMe();
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
+		odeToBoozeMe(overdrink);
+		odeToBoozeMe(overdrink);
 		
 		doCLI("drink ice island long tea");
 		doCLI("drink sockdollager");
@@ -86,7 +85,7 @@ void main(int day, int overdrink)
 		
 		doCLI("chew astral energy drink"); //doing later for more adventures
 		
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
 		doCLI("drink sockdollager");
 		
 		maximize("weapon damage", false);
@@ -99,8 +98,8 @@ void main(int day, int overdrink)
 		//DO ITEM DROP SERVICE
 		page = visit_url("choice.php?whichchoice=1089&option=9&pwd");
 		
-		odeToBoozeMe();
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
+		odeToBoozeMe(overdrink);
 		
 		//expend free rests here
 		for i from 0 to 10 { doCLI("rest free"); }
@@ -116,7 +115,7 @@ void main(int day, int overdrink)
 		page = visit_url("council.php"); //get this set first?
 		doCLI("cheat wrench");
 		doCLI("cheat lead pipe");
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
 		doCLI("drink sockdollager");
 		maximize("spell damage", false);
 		//DO SPELL DAMAGE SERVICE
@@ -132,8 +131,8 @@ void main(int day, int overdrink)
 		doCLI("acquire 2 Strikes Again Bigmouth");
 		doCLI("acquire this charming flan");
 		doCLI("eat this charming flan");
-		odeToBoozeMe();
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
+		odeToBoozeMe(overdrink);
 		doCLI("drink ice island long tea");
 		doCLI("drink Strikes Again Bigmouth");
 		doCLI("drink Strikes Again Bigmouth");
@@ -150,15 +149,15 @@ void main(int day, int overdrink)
 		page = visit_url("choice.php?whichchoice=1089&option=1&pwd");
     
 		doCLI("chew blood-drive sticker");
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
 		doCLI("drink Bee's Knees");
 		doCLI("cheat strength"); //before strength service
 		maximize("mus", false);
 		//DO MUS SERVICE
 		page = visit_url("choice.php?whichchoice=1089&option=2&pwd");
 
-		odeToBoozeMe();
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
+		odeToBoozeMe(overdrink);
 		//expend free rests here
 		for i from 0 to 10 { doCLI("rest free"); }
 		if (overdrink == 1) doCLI("overdrink vintage smart drink");
@@ -172,7 +171,7 @@ void main(int day, int overdrink)
 		page = visit_url("council.php"); //get this set first?
 		doCLI("cheat rope");
 		
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
 		doCLI("drink hotsocks");
 		maximize("familiar weight", false);
 		//DO FAMLIAR WEIGHT SERVICE
@@ -192,12 +191,12 @@ void main(int day, int overdrink)
 		doCLI("acquire 2 snow crab");
 		doCLI("eat snow crab");
 		doCLI("eat snow crab");
-		odeToBoozeMe();
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
+		odeToBoozeMe(overdrink);
 		doCLI("drink ice island long tea");
 		doCLI("drink Strikes Again Bigmouth");
     
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
 		doCLI("drink Bee's Knees");
 		doCLI("cheat Magician"); //before strength service
 		maximize("myst", false);
@@ -205,7 +204,7 @@ void main(int day, int overdrink)
 		//DO MYST SERVICE
 		page = visit_url("choice.php?whichchoice=1089&option=3&pwd");
 
-		odeToBoozeMe();
+		odeToBoozeMe(overdrink);
 		doCLI("drink Bee's Knees");
 		doCLI("cheat fool"); //before strength service
 		maximize("mox", false);
