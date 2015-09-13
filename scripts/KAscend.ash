@@ -129,8 +129,8 @@ void main(int day, int overdrink)
 		doCLI("garden pick");
 		doCLI("acquire ice island long tea");
 		doCLI("acquire 2 Strikes Again Bigmouth");
-		doCLI("acquire this charming flan");
-		doCLI("eat this charming flan");
+		if (my_fullness() < 5) doCLI("acquire this charming flan");
+		if (my_fullness() < 5) doCLI("eat this charming flan");
 		odeToBoozeMe(overdrink);
 		odeToBoozeMe(overdrink);
 		doCLI("drink ice island long tea");
@@ -138,7 +138,7 @@ void main(int day, int overdrink)
 		doCLI("drink Strikes Again Bigmouth");
     
 		doCLI("drink Ish Kabibble"); //for resist service
-		doCLI("eat wet dog");
+		if (my_fullness() < 5) doCLI("eat wet dog");
 		doCLI("eat sausage without a cause");
 		maximize("hot res", false);
 		//DO HOT RES SERVICE
