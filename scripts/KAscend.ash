@@ -1,7 +1,7 @@
 // KAscend.ash - Kavok
 // Credits to come
 
-script "KAscend.ash - v0.25";
+script "KAscend.ash - v0.24";
 notify Kavok;
 
 print("Your game says it's day "+my_daycount()+". Select day to run:");
@@ -90,12 +90,12 @@ void main(int day, int overdrink)
 		odeToBoozeMe();
 		doCLI("drink sockdollager");
 		
-		maximize("weapon damage");
+		doCLI("maximize weapon damage");
 		//DO WEAPON DAMAGE SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=6&pwd");
 		doCLI("eat weird gazelle steak");
 		
-		maximize("item drop");
+		doCLI("maximize item drop");
 		doCLI("cheat The Wheel of Fortune");
 		//DO ITEM DROP SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=9&pwd");
@@ -108,7 +108,7 @@ void main(int day, int overdrink)
 		
 		if (overdrink == 1) doCLI("overdrink emergency margarita");
 		
-		maximize("adv");
+		doCLI("maximize adv");
 		print("Done with Day 1 - don't waste the margarita buff on turn 1 of day 2!");
 		break;
 		
@@ -119,7 +119,7 @@ void main(int day, int overdrink)
 		doCLI("cheat lead pipe");
 		odeToBoozeMe();
 		doCLI("drink sockdollager");
-		maximize("spell damage");
+		doCLI("maximize spell damage");
 		//DO SPELL DAMAGE SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=7&pwd");
     
@@ -143,11 +143,11 @@ void main(int day, int overdrink)
 		doCLI("drink Ish Kabibble"); //for resist service
 		doCLI("eat wet dog");
 		doCLI("eat sausage without a cause");
-		maximize("hot res");
+		doCLI("maximize hot res");
 		//DO HOT RES SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=10&pwd");
     
-		maximize("hp");
+		doCLI("maximize hp");
 		//DO HP SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=1&pwd");
     
@@ -155,7 +155,7 @@ void main(int day, int overdrink)
 		odeToBoozeMe();
 		doCLI("drink Bee's Knees");
 		doCLI("cheat strength"); //before strength service
-		maximize("mus");
+		doCLI("maximize mus");
 		//DO MUS SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=2&pwd");
 
@@ -165,7 +165,7 @@ void main(int day, int overdrink)
 		for i from 0 to 10 { doCLI("rest free"); }
 		if (overdrink == 1) doCLI("overdrink vintage smart drink");
     
-		maximize("adv");
+		doCLI("maximize adv");
 		print("Done with Day 2 - don't waste the water buff!");
 		break;
 		
@@ -176,7 +176,7 @@ void main(int day, int overdrink)
 		
 		odeToBoozeMe();
 		doCLI("drink hotsocks");
-		maximize("familiar weight");
+		doCLI("maximize familiar weight");
 		//DO FAMLIAR WEIGHT SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=5&pwd");
     
@@ -204,7 +204,7 @@ void main(int day, int overdrink)
 		odeToBoozeMe();
 		doCLI("drink Bee's Knees");
 		doCLI("cheat Magician"); //before strength service
-		maximize("myst");
+		doCLI("maximize myst");
 		doCLI("use bag of grain");
 		//DO MYST SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=3&pwd");
@@ -212,12 +212,12 @@ void main(int day, int overdrink)
 		odeToBoozeMe();
 		doCLI("drink Bee's Knees");
 		doCLI("cheat fool"); //before strength service
-		maximize("mox");
+		doCLI("maximize mox");
 		doCLI("use pocket maze");
 		//DO MOX SERVICE
 		page = visit_url2("choice.php?whichchoice=1089&option=4&pwd");
     
-		maximize("-combat");
+		doCLI("maximize -combat");
 		doCLI("use shady shades");
 		doCLI("use squeaky toy rose");
 		//DO -COMBAT SERVICE
