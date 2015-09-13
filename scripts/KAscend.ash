@@ -21,15 +21,15 @@ boolean odeToBoozeMe()
 	return true;
 }
 
-string visit_url2(string url)
+buffer visit_url2(string url)
 {
-	string buf = visit_url2(url);
+	buffer buf = visit_url2(url);
 	return buf;
 }
 
 void main(int day, int overdrink)
 {
-	string page;
+	buffer page;
 	switch(day)
 	{
 		case 0: print("EXITING");
