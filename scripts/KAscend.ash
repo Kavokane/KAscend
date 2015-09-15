@@ -1,7 +1,7 @@
 // KAscend.ash - Kavok
 // Credits to come
 
-script "KAscend.ash - v0.28";
+script "KAscend.ash - v0.29";
 notify Kavok;
 
 print("Your game says it's day "+my_daycount()+". Select day to run:");
@@ -22,10 +22,30 @@ boolean odeToBoozeMe(int overdrink)
 	return true;
 }
 
-string visit_url2(string url)
-{
-	string buf = visit_url(url);
-	return buf;
+int advCost(int whichtest) {
+	buffer page = visit_url("council.php");
+	string teststr = "name=option value="+ whichtest +">";
+	if (contains_text(page, teststr)) {
+		int chars = 140; //chars to look ahead
+		string pagestr = substring(page, page.index_of(teststr)+length(teststr), page.index_of(teststr)+length(teststr)+chars);
+		string advstr = substring(pagestr, pagestr.index_of("(")+1, pagestr.index_of("(")+3);
+		advstr = replace_string(advstr, " ", ""); //removes whitespace, if the test is < 10 adv
+		return to_int(advstr);
+	} else {
+		print("Didn't find specified test on the council page. Already done?");
+		return 99999;
+	}
+}
+
+boolean doTest(int which) {
+	if (my_adventures() >= advCost(which)) {
+		print("Undertaking community service task at a cost of " + advCost(which) + " adventures", "blue");
+		visit_url("choice.php?whichchoice=1089&option="+which+"&pwd="+my_hash());
+		return true;
+	} else {
+		abort("Failed to generate enough adventures to complete test " + which);
+		return false;
+	}
 }
 
 void main(int day, int overdrink)
@@ -80,7 +100,8 @@ void main(int day, int overdrink)
 		
 		//DO COIL SERVICE
 		page = visit_url("council.php"); //initial message that the council is in jail
-		page = visit_url("choice.php?whichchoice=1089&option=11&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=11&pwd");
+		doTest(11);
 		doCLI("use a ten-percent bonus");
 		
 		doCLI("chew astral energy drink"); //doing later for more adventures
@@ -90,13 +111,15 @@ void main(int day, int overdrink)
 		
 		maximize("weapon damage", false);
 		//DO WEAPON DAMAGE SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=6&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=6&pwd");
+		doTest(6);
 		doCLI("eat weird gazelle steak");
 		
 		maximize("item drop", false);
 		doCLI("cheat The Wheel of Fortune");
 		//DO ITEM DROP SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=9&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=9&pwd");
+		doTest(9);
 		
 		odeToBoozeMe(overdrink);
 		odeToBoozeMe(overdrink);
@@ -119,7 +142,8 @@ void main(int day, int overdrink)
 		doCLI("drink sockdollager");
 		maximize("spell damage", false);
 		//DO SPELL DAMAGE SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=7&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=7&pwd");
+		doTest(7);
     
 		if (my_mp() < 6) doCLI("rest free"); else print("You have enough mana, skipping rest");
 		use_skill(3, $skill[summon smithsness]);
@@ -142,11 +166,13 @@ void main(int day, int overdrink)
 		doCLI("eat sausage without a cause");
 		maximize("hot res", false);
 		//DO HOT RES SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=10&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=10&pwd");
+		doTest(10);
     
 		maximize("hp", false);
 		//DO HP SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=1&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=1&pwd");
+		doTest(1);
     
 		doCLI("chew blood-drive sticker");
 		odeToBoozeMe(overdrink);
@@ -154,7 +180,8 @@ void main(int day, int overdrink)
 		doCLI("cheat strength"); //before strength service
 		maximize("mus", false);
 		//DO MUS SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=2&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=2&pwd");
+		doTest(2);
 
 		odeToBoozeMe(overdrink);
 		odeToBoozeMe(overdrink);
@@ -175,7 +202,8 @@ void main(int day, int overdrink)
 		doCLI("drink hotsocks");
 		maximize("familiar weight", false);
 		//DO FAMLIAR WEIGHT SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=5&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=5&pwd");
+		doTest(5);
     
 		//normal prep here
 		if (my_mp() < 6) doCLI("rest free"); else print("You have enough mana, skipping rest");
@@ -198,11 +226,12 @@ void main(int day, int overdrink)
     
 		odeToBoozeMe(overdrink);
 		doCLI("drink Bee's Knees");
-		doCLI("cheat Magician"); //before strength service
+		doCLI("cheat Magician"); //before myst service
 		maximize("myst", false);
 		doCLI("use bag of grain");
 		//DO MYST SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=3&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=3&pwd");
+		doTest(3);
 
 		odeToBoozeMe(overdrink);
 		doCLI("drink Bee's Knees");
@@ -210,13 +239,15 @@ void main(int day, int overdrink)
 		maximize("mox", false);
 		doCLI("use pocket maze");
 		//DO MOX SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=4&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=4&pwd");
+		doTest(4);
     
 		maximize("-combat", false);
 		doCLI("use shady shades");
 		doCLI("use squeaky toy rose");
 		//DO -COMBAT SERVICE
-		page = visit_url("choice.php?whichchoice=1089&option=8&pwd");
+		//page = visit_url("choice.php?whichchoice=1089&option=8&pwd");
+		doTest(8);
     
 		print("YAY DONE!");
 		break;
